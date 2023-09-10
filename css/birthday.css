@@ -1,0 +1,204 @@
+
+
+#body{
+    color: #000066;
+    background: linear-gradient(to right, #b30048, #be8500);
+
+}
+
+header {
+    background: linear-gradient(to right, #b30048, #be8500);
+    text-align: right;
+    color: #fff;
+}
+
+.header-text {
+    margin-left: 50px;
+    margin-top: 69px;
+    float: left;
+    margin-right: 20px;
+    font-size: 50px;
+    color: #fff;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+  
+  .center-container {
+    display: flex;
+    justify-content: center;
+    background-color: #000000a5;
+  }
+  
+  .booking-button {
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  .booking-button img {
+    width: 170px;
+    height: auto;
+    transition: transform 0.3s ease;
+  }
+  
+  .booking-button img:hover {
+    transform: scale(1.1);
+  }
+  
+  
+
+nav {
+    background-color: #000000ab;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    background-color:transparent;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  nav li {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 20px;
+  }
+  
+  nav li a {
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+    color: #ffffff;
+    padding: 5px;
+    font-weight: bold;
+    font-size: 16px;
+    transition: font-size 0.3s ease-in-out;
+  }
+  
+  nav li a:hover {
+    font-size: 20px; 
+    transform: scale(1.1); 
+    color: #009ad6;
+    transition: 0.3s;
+  }
+  
+  section {
+    margin-bottom: 20px;
+  }
+
+
+
+@keyframes backgroundAnimation {
+    0% { background-image: url('../Images/z1.jpg'); }
+    16.666% { background-image: url('../Images/z2.jpg'); }
+    33.333% { background-image: url('../Images/z3.jpg'); }
+    50% { background-image: url('../Images/z4.jpg'); }
+    66.666% { background-image: url('../Images/z5.jpg'); }
+    83.333% { background-image: url('../Images/z6.jpg'); }
+    100% { background-image: url('../Images/z1.jpg'); }
+  }
+  
+  
+  #wed {
+    background-color: #000000a9;
+    animation: backgroundAnimation 30s linear infinite; 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    min-height: 100vh; 
+    line-height: 40px;
+    color: #ffffff;
+    font-size: 27px;
+    font-family: 'Roboto', sans-serif;
+}
+
+  #wedexp{
+    line-height: 40px;
+    background-color: #0000008e;
+    color: #ffffff;
+    font-size: 27px;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  #shade{
+    background-color: #00000084;
+  }
+  
+  
+  .content {
+    padding: 20px;
+    text-align: center;
+    color: #ffffff; 
+  }
+  
+  #topic{
+    text-align: center;
+    color: #fff;
+    background-color: #000000b1;
+    font-size: 50px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+
+  #exp{
+    line-height: 40px;
+    background-color: #0000008e;
+    color: #ffffff;
+    font-size: 27px;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .footer {
+    background: linear-gradient(to right, #b30048, #be8500);
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  .footer a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  #futlogo {
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .left {
+    text-align: left;
+    float: left;
+    width: 30%;
+    margin-top: 20px; 
+  }
+  
+  .middle {
+    text-align: center;
+    float: left;
+    width: 30%;
+    margin-top: 10px;
+  }
+  
+  .contact-info {
+    margin-top: 10px; 
+    font-size: 22px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+  
+  .email {
+    font-size: 20px;
+    clear: both;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+  
+  .bottom {
+    clear: both;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .branch {
+    margin-top: 76px;
+    font-size: 25px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
