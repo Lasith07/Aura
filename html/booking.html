@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" type="text/css" href="../css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <title>Booking Form</title>
+
+    <link rel="icon" href="../favicon/favicon.ico" type="image/x-icon">
+ 
+    <link rel="icon" type="image/png" sizes="192x192" href="../favicon/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
+ 
+    <link rel="apple-touch-icon" href="../favicon/apple-touch-icon.png">
+ 
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+</head>
+
+<h1 id="page" style="background-color: rgb(0, 35, 130);">BOOKING</h1>
+<div id="bukbody" style=" background-color: #00000048;"> 
+  <div style="margin-left: 40px;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color:rgb(255, 255, 255); font-size: 30px;" >
+  <body x-data="{ days: 1, children: 0, beds: 0, adults: 1, singleeco: null, singledeluxe: null, doubleeco: null, doubledeluxe: null, tripleeco: null, tripledeluxe: null,
+    calculateSingleRooms: function() { return (this.singleeco * 25000 + this.singledeluxe * 35000) * this.days; },
+    calculateDoubleRooms: function() { return (this.doubleeco * 35000 + this.doubledeluxe * 45000) * this.days; },
+    calculateChildrenMeals: function() { return this.children * 5000; },
+    calculateBeds: function() { return this.beds * 8000; },
+    calculateTripleRooms: function() { return (this.tripleeco * 40000 + this.tripledeluxe * 50000) * this.days; }}"
+    x-init="() => { Alpine.initData({ 'days': 1, 'children': 1, 'beds': 1, 
+            'calculateSingleRooms': function() { return (this.singleeco * 25000 + this.singledeluxe * 35000) * this.days; },
+            'calculateDoubleRooms': function() { return (this.doubleeco * 35000 + this.doubledeluxe * 45000) * this.days; },
+            'calculateTripleRooms': function() { return (this.tripleeco * 40000 + this.tripledeluxe * 50000) * this.days; },
+            'calculateBeds': function() { return this.beds * 8000; },
+            'calculateChildrenMeals': function() { return this.children * 5000; } })}">
+
+
+  <label for="fullname" style="display: block; margin-bottom: 5px;">Full Name:</label>
+  <input type="text" id="fullname" name="fullname" style="width: 500px; margin-bottom: 10px;">
+  
+  <label for="email" style="display: block; margin-bottom: 5px;">Email Address:</label>
+  <input type="text" id="email" name="email" style="width: 500px; margin-bottom: 10px;">
+
+  <label for="mobile" style="display: block; margin-bottom: 5px;">Mobile:</label>
+  <input type="text" id="mobile" name="mobile" style="width: 300px; margin-bottom: 10px;">
+  
+  <label for="hotelbranch" style="display: block; margin-bottom: 5px;">Hotel Branch</label>
+  <select id="hotelbranch" name="hotelbranch" style="width: 400px; margin-bottom: 10px;">
+    <option value="Negombo">Negombo</option>
+    <option value="Riverston">Riverston</option>
+  </select>
+
+  <label for="checkindate" style="display: block; margin-bottom: 5px;">Check-In Date:</label>
+  <input type="date" id="checkindate" name="checkindate" style="width: 500px; margin-bottom: 10px;">
+
+  <label for="checkoutdate" style="display: block; margin-bottom: 5px;">Check-Out Date:</label>
+  <input type="date" id="checkoutdate" name="checkoutdate" style="width: 500px; margin-bottom: 10px;">
+
+  <div><!-- days -->
+    <label for="days" style="display: block; margin-bottom: 5px;">No. of Days:</label>
+    <input type="number" id="days" x-model="days" min="1" max="30" style="width: 500px; height: 30px; margin-bottom: 10px;">
+  </div>
+
+  <label for="adults" style="display: block; margin-bottom: 5px;">No. of Adults</label>
+  <input type="number" id="adults" x-model="adults" min="1" max="15" style="width: 500px;height: 30px; margin-bottom: 10px;">
+
+  <div><!--children-->
+    <label for="children" style="display: block; margin-bottom: 5px;">No. of Children</label>
+    <input type="number" id="children" x-model="children" min="0" max="15" style="width: 500px;height: 30px; margin-bottom: 10px;">
+  </div>
+
+  <div><!--singlerooms-->
+    <label for="singlerooms" style="display: block; margin-bottom: 5px;">No. of Single Rooms</label>
+    <input type="number" id="singleeco" x-model="singleeco" min="0" max="5" style="width: 500px;height: 30px; margin-bottom: 10px; margin-right: 20px;" placeholder="Eco Single Rooms">
+    <input type="number" id="singledeluxe" x-model="singledeluxe" min="0" max="5" style="width: 500px;height: 30px; margin-bottom: 10px;" placeholder="Deluxe Single Rooms">
+  </div>
+  
+  <div><!--doublerooms-->
+    <label for="doublerooms" style="display: block; margin-bottom: 5px;">No. of Double Rooms</label>
+    <input type="number" id="doubleeco" x-model="doubleeco" min="0" max="5" style="width: 500px;height: 30px; margin-bottom: 10px; margin-right: 20px;" placeholder="Eco Double Rooms">
+    <input type="number" id="doubledeluxe" x-model="doubledeluxe" min="0" max="5" style="width: 500px;height: 30px; margin-bottom: 10px; margin-right: 20px;" placeholder="Deluxe Double Rooms">
+  </div>
+
+  <div><!--Triplerooms-->
+    <label for="triplerooms" style="display: block; margin-bottom: 5px;">No. of Triple Rooms</label>
+    <input type="number" id="tripleeco" x-model="tripleeco" min="0" max="5" style="width: 500px;height: 30px; margin-bottom: 10px; margin-right: 20px;" placeholder="Eco Triple Rooms">
+    <input type="number" id="tripledeluxe" x-model="tripledeluxe" min="0" max="5" style="width: 500px;height: 30px; margin-bottom: 10px; margin-right: 20px;" placeholder="Deluxe Triple Rooms">
+  </div>
+
+  <div><!--extrabeds-->
+    <label for="beds" style="display: block; margin-bottom: 5px;">Extra Beds</label>
+    <input type="number" id="beds" x-model="beds" min="0" max="5" style="width: 500px;height: 30px; margin-bottom: 10px; margin-right: 20px;">
+  </div>
+
+
+  <br><br>
+
+  <h3><u><strong>COST OF BOOKING</strong></u></h3>
+
+  <div style><!--calculation-->
+    <p style="font-size: 40px;">Single Rooms: $<span x-text="calculateSingleRooms()"></span></p>
+    <p style="font-size: 40px;">Double Rooms: $<span x-text="calculateDoubleRooms()"></span></p>
+    <p style="font-size: 40px;">Triple Rooms: $<span x-text="calculateTripleRooms()"></span></p>
+    <p style="font-size: 40px;">Extra Beds: $<span x-text="calculateBeds()"></span></p>
+    <p style="font-size: 40px;">Children's Meals: $<span x-text="calculateChildrenMeals()"></span></p>
+    <p style="font-size: 40px;">Total Cost: $<span x-text="calculateSingleRooms() + calculateDoubleRooms() + calculateTripleRooms() + calculateChildrenMeals() + calculateBeds()"></span></p>
+  </div>
+
+  <a href="advbooking.html" class="button" style="margin-top: 40px; margin-bottom: 40px;">PROCEED </a>
+
+</div>
+</div>
+
+
+</body>
+</html>
